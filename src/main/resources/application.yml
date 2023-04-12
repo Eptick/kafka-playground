@@ -1,0 +1,3 @@
+spring:
+  kafka:
+    bootstrap-servers: "kafka.gorilly.digital:9100"
