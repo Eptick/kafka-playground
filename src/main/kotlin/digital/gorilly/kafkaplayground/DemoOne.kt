@@ -14,7 +14,8 @@ class DemoOne {
     }
 
     @Autowired
-    private var kafkaTemplate: KafkaTemplate<String?, String?>? = null
+    private var kafkaTemplate: KafkaTemplate<String, String>? = null
+
 
     fun sendMessage(msg: String?) {
         kafkaTemplate!!.send("demo", msg)
@@ -28,7 +29,7 @@ class DemoOne {
 
     @KafkaListener(topics = ["demo"])
     fun listenGroupFoo(message: String) {
-        println("Received Message in group foo: $message")
+        log.info("Received Message in group foo: $message")
     }
 
 }
