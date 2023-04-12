@@ -20,7 +20,7 @@ class DemoOne {
         kafkaTemplate!!.send("demo", msg)
     }
 
-    @Scheduled(fixedDelay = 1)
+    @Scheduled(fixedDelay = 100000)
     fun init() {
         log.info("aa")
         sendMessage("testing")
